@@ -1,11 +1,10 @@
 import "index.css";
-import Header from "templates/Header";
-import Hero from "components/Hero";
+import { requests } from "lib/api/request";
+import { Row } from "components/Row";
 export default function App(): JSX.Element {
   return (
     <>
-      <Header />
-      <Hero />
+      <Row title="Top Rated" fetchUrl={requests.categoryTopRated} />
     </>
   );
 }
