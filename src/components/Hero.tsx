@@ -1,5 +1,8 @@
+import hero from "assets/media/images/hero.jpg"
 export default function Hero(): JSX.Element {
   return (
-    <div></div>
-  )
+    <div>
+      <img src={hero} alt="" />
+    </div>
+  );
 }
