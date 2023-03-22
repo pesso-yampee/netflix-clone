@@ -42,7 +42,9 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props): JSX.Element => {
             <figure className={isLargeRow ? "w-64" : "w-20"}>
               <img
                 style={{ maxWidth: "initial", width: "100%" }}
-                src={`${baseUrl}${movie.poster_path}`}
+                src={`${baseUrl}${
+                  isLargeRow ? movie.poster_path : movie.backdrop_path
+                }`}
                 alt={movie.name}
               />
             </figure>
