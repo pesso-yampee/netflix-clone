@@ -1,9 +1,11 @@
 import "index.css";
 import { requests } from "lib/api/request";
 import { Row } from "components/Row";
+import { Hero } from "components/Hero";
 export default function App(): JSX.Element {
   return (
     <>
+      <Hero />
       <div className="bg-black">
         <Row
           title="NETFLIX ORIGINALS"
