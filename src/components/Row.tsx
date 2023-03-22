@@ -20,7 +20,7 @@ type movie = {
   poster_path: string;
 };
 
-export const Row = ({ title, fetchUrl }: Props): JSX.Element => {
+export const Row = ({ title, fetchUrl, isLargeRow }: Props): JSX.Element => {
   const [movies, setMovies] = useState<movie[]>([]);
   const baseUrl = "https://image.tmdb.org/t/p/original";
 
@@ -35,14 +35,17 @@ export const Row = ({ title, fetchUrl }: Props): JSX.Element => {
 
   return (
     <div>
-      <ul className="flex overflow-y-hidden overflow-x-scroll">
+      <h2 className="font-serif text-2xl text-white">{title}</h2>
+      <ul className="flex gap-4 overflow-y-hidden overflow-x-scroll pt-4 pl-6">
         {movies.map((movie: movie) => (
           <li key={movie.id}>
+            <figure className={isLargeRow ? "w-64" : "w-20"}>
               <img
-                className="max-h-24 object-contain"
+                style={{ maxWidth: "initial", width: "100%" }}
                 src={`${baseUrl}${movie.poster_path}`}
                 alt={movie.name}
               />
+            </figure>
           </li>
         ))}
       </ul>
