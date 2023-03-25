@@ -43,7 +43,7 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props): JSX.Element => {
               <img
                 style={{ maxWidth: "initial", width: "100%" }}
                 src={`${baseUrl}${
-                  isLargeRow ? movie.poster_path : movie.backdrop_path
+                  isLargeRow ? movie.poster_path ?? movie.backdrop_path : movie.backdrop_path
                 }`}
                 alt={movie.name}
               />
