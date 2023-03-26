@@ -5,10 +5,13 @@ type Props = {
 export const Button = ({ text }: Props): JSX.Element => {
   return (
     <button
-      className="bg-black bg-opacity-60 py-2 px-10 text-center"
+      style={{
+        fontSize: "0.8rem",
+      }}
+      className="rounded-sm bg-black bg-opacity-50 py-2 px-8 text-center font-bold leading-none text-white duration-300 hover:bg-white hover:text-black"
       type="button"
     >
-      <span className="leading-none text-white">{text}</span>
+      {text}
     </button>
   );
 };
