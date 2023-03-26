@@ -2,9 +2,12 @@ import "index.css";
 import { requests } from "lib/api/request";
 import { Row } from "components/Row";
 import { Hero } from "components/Hero";
+import { Header } from "components/Header";
+
 export default function App(): JSX.Element {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen bg-black">
+      <Header />
       <Hero />
       <Row
         title="NETFLIX ORIGINALS"
