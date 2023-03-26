@@ -15,13 +15,22 @@ type movieProps = {
 export const Hero = (): JSX.Element => {
   const [movie, setMovie] = useState<movieProps>({});
   const baseUrl = "https://image.tmdb.org/t/p/original";
-  const imgSrc = `${baseUrl}${
-    movie.poster_path ? movie.poster_path : movie.backdrop_path
-  }`;
+  const imgSrc = `${baseUrl}${movie.backdrop_path ?? movie.poster_path}`;
+  const MAX_CHARACTER_LIMIT = 150;
+
+  function addEllipsis(input: string): string {
+    const truncatedOverview =
+      input.length > MAX_CHARACTER_LIMIT
+        ? input.substring(0, MAX_CHARACTER_LIMIT - 1) + "..."
+        : input;
+
+    return truncatedOverview;
+  }
+  const movieOverview = addEllipsis(movie.overview ?? "");
 
   useEffect(() => {
     async function fetchData() {
-      const request = await instance.get(requests.categoryTrending);
+      const request = await instance.get(requests.categoryNetflixOriginals);
       const randomIndex = Math.floor(
         Math.random() * request.data.results.length - 1
       );
@@ -44,7 +53,7 @@ export const Hero = (): JSX.Element => {
           <Button text="Play" />
           <Button text="My List" />
         </div>
-        <p className="mt-4 text-sm text-white">{movie.overview}</p>
+        <p className="mt-4 text-sm text-white">{movieOverview}</p>
       </div>
     </div>
   );
