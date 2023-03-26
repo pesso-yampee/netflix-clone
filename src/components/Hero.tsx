@@ -35,7 +35,6 @@ export const Hero = (): JSX.Element => {
         Math.random() * request.data.results.length - 1
       );
       setMovie(request.data.results[randomIndex]);
-      console.log(request.data.results[randomIndex]);
       return request;
     }
     fetchData();
