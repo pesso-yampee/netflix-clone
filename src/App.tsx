@@ -9,17 +9,19 @@ export default function App(): JSX.Element {
     <div className="min-h-screen bg-black">
       <Header />
       <Hero />
-      <Row
-        title="NETFLIX ORIGINALS"
-        fetchUrl={requests.categoryNetflixOriginals}
-        isLargeRow={true}
-      />
-      <Row title="Top Movies" fetchUrl={requests.categoryTopRated} />
-      <Row title="Action Movies" fetchUrl={requests.categoryActionMovies} />
-      <Row title="Comedy Movies" fetchUrl={requests.categoryComedyMovies} />
-      <Row title="Horror Movies" fetchUrl={requests.categoryHorrorMovies} />
-      <Row title="Romance Movies" fetchUrl={requests.categoryRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.categoryDocumenttaries} />
+      <div className="grid gap-7 pl-5 pb-7">
+        <Row
+          title="NETFLIX ORIGINALS"
+          fetchUrl={requests.categoryNetflixOriginals}
+          isLargeRow={true}
+        />
+        <Row title="Top Rated" fetchUrl={requests.categoryTopRated} />
+        <Row title="Action Movies" fetchUrl={requests.categoryActionMovies} />
+        <Row title="Comedy Movies" fetchUrl={requests.categoryComedyMovies} />
+        <Row title="Horror Movies" fetchUrl={requests.categoryHorrorMovies} />
+        <Row title="Romance Movies" fetchUrl={requests.categoryRomanceMovies} />
+        <Row title="Documentaries" fetchUrl={requests.categoryDocumenttaries} />
+      </div>
     </div>
   );
 }
