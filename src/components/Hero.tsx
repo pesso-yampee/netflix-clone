@@ -44,7 +44,7 @@ export const Hero = (): JSX.Element => {
       style={{ backgroundImage: `url(${imgSrc})`, height: "60vh" }}
       className=" relative w-screen pt-36 bg-cover bg-center bg-no-repeat before:absolute before:bottom-0 before:block before:h-1/4 before:w-full before:bg-gradient-to-b before:from-transparent before:to-black"
     >
-      <div className="max-w-sm ml-8">
+      <div className="max-w-sm pl-5">
         <h1 className="text-3xl text-white font-bold">
           {movie.name ? movie.name : movie.title}
         </h1>

@@ -19,10 +19,10 @@ export const Header = (): JSX.Element => {
     <>
       <header className="fixed top-0 left-0 z-10 w-full">
         <div
-          className={`trasition-all flex items-center justify-between p-2.5 pr-4 duration-300
+          className={`trasition-all flex items-center justify-between p-2.5 pl-5 pr-4 duration-300
             ${isScrolled ? "bg-black" : "bg-transparent"}`}
         >
-          <img src={logo} alt="logo" width={100} />
+          <img src={logo} alt="logo" width={50} />
         </div>
       </header>
     </>
