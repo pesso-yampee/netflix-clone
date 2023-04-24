@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "assets/media/images/header_logo.png";
+import logo from "assets/media/images/header_logo.jpg";
 
 export const Header = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState<Boolean>(false);
@@ -22,8 +22,7 @@ export const Header = (): JSX.Element => {
           className={`trasition-all flex items-center justify-between p-2.5 pr-4 duration-300
             ${isScrolled ? "bg-black" : "bg-transparent"}`}
         >
-          <img src={logo} alt="" width={100} />
-          <div className="  h-8 w-8 bg-green-800 "></div>
+          <img src={logo} alt="logo" width={100} />
         </div>
       </header>
     </>
