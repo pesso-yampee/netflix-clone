@@ -11,7 +11,7 @@ export default function App(): JSX.Element {
       <Hero />
       <div className="grid gap-7 pl-5 pb-7">
         <Row
-          title="NETFLIX ORIGINALS"
+          title="ORIGINALS"
           fetchUrl={requests.categoryNetflixOriginals}
           isLargeRow={true}
         />
